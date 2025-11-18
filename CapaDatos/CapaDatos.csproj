@@ -43,9 +43,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConexionBD.cs" />
+    <Compile Include="DalPlatillos.cs" />
     <Compile Include="DalRestaurantes.cs" />
     <Compile Include="MetodoDatos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{a7ec31aa-144b-4706-aa08-c1d54b17fe31}</Project>
+      <Name>VO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

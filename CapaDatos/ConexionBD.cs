@@ -14,24 +14,23 @@ public sealed class ConexionBD
     private ConexionBD()
     {
         _cadenaConexion = ConfigurationManager.ConnectionStrings["GuiaGastronomicaTLX"].ConnectionString;
+        
     }
 
     public SqlConnection ObtenerConexion()
     {
         return new SqlConnection(_cadenaConexion);
     }
-
-
-
 }
 
 
-class Programa
+
+// Uso en el programa
+class Program
 {
     static void Main()
     {
         SqlConnection conexion = ConexionBD.Instancia.ObtenerConexion();
-        Console.WriteLine("Cadena de conexión obtenida: " + conexion.ConnectionString);
-
+        Console.WriteLine("Conexión establecida correctamente.");
     }
 }

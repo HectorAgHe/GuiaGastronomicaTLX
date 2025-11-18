@@ -100,6 +100,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Catalogos\AltaRestaurante.aspx" />
+    <Content Include="Catalogos\EditarRestaurante.aspx" />
+    <Content Include="Catalogos\ListarRestaurantes.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -118,6 +121,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\sweetalert.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -155,6 +159,7 @@
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\sweetalert.min.js" />
     <Content Include="Scripts\WebForms\DetailsView.js" />
     <Content Include="Scripts\WebForms\Focus.js" />
     <Content Include="Scripts\WebForms\GridView.js" />
@@ -192,6 +197,27 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Catalogos\AltaRestaurante.aspx.cs">
+      <DependentUpon>AltaRestaurante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\AltaRestaurante.aspx.designer.cs">
+      <DependentUpon>AltaRestaurante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\EditarRestaurante.aspx.cs">
+      <DependentUpon>EditarRestaurante.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\EditarRestaurante.aspx.designer.cs">
+      <DependentUpon>EditarRestaurante.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos\ListarRestaurantes.aspx.cs">
+      <DependentUpon>ListarRestaurantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Catalogos\ListarRestaurantes.aspx.designer.cs">
+      <DependentUpon>ListarRestaurantes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -224,6 +250,9 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="Util\Enumeradores.cs" />
+    <Compile Include="Util\SweetAlertConstants.cs" />
+    <Compile Include="Util\UtilControls.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -234,8 +263,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Catalogos\" />
-    <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -247,6 +274,20 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{beef66ff-7f92-40a5-9b6c-0c4f0fc0e06d}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{9e4dfcbf-ca3b-4cd7-a675-07b1b39ff669}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VO\VO.csproj">
+      <Project>{a7ec31aa-144b-4706-aa08-c1d54b17fe31}</Project>
+      <Name>VO</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

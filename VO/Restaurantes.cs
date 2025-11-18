@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VO
 {
-    internal class RestaurantesVO
+    public class RestaurantesVO
     {
         public int _restauranteId;
         public string _nombre;
@@ -17,7 +17,7 @@ namespace VO
         public string _telefono;
         public string _horario;
         public string _sitioWeb;
-        public string _fechaRegistro;
+        public DateTime _fechaRegistro;
 
         // Propiedades 
 
@@ -39,8 +39,9 @@ namespace VO
         }
         public string TipoComida
         {
-            get => _direccion;
-            set => _direccion = value;
+            get => _tipoComida; // usa la variable correcta
+            set => _tipoComida = value; // asigna a la variable correcta
+
         }
         public string Direccion
         {
@@ -66,7 +67,7 @@ namespace VO
             get => _sitioWeb;
             set => _sitioWeb = value;
         }
-        public string FechaRegistro
+        public DateTime FechaRegistro
         {
             get => _fechaRegistro;
             private set => _fechaRegistro = value;
@@ -85,22 +86,22 @@ namespace VO
             _telefono = string.Empty;
             _horario = string.Empty;
             _sitioWeb = string.Empty;
-            _fechaRegistro = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            _fechaRegistro = DateTime.Parse("1900-01-01");
         }
 
 
         // Constructor que inicializa los atributos a partir de un DataRow
         public RestaurantesVO(DataRow dr)
         {
-            RestauranteId = int.Parse(dr["RestauranteId"].ToString());
-            Nombre = dr["Nombre"].ToString();
-            Descripcion = dr["Descripcion"].ToString();
-            TipoComida = dr["TipoComida"].ToString();
-            Direccion = dr["Direccion"].ToString();
-            Telefono = dr["Telefono"].ToString();
-            Horario = dr["Horario"].ToString();
-            SitioWeb = dr["SitioWeb"].ToString();
-            FechaRegistro = dr["FechaRegitro"].ToString();
+            RestauranteId = int.Parse(dr["restauranteId"].ToString());
+            Nombre = dr["nombre"].ToString();
+            Descripcion = dr["descripción"].ToString();
+            TipoComida = dr["tipoComida"].ToString();
+            Direccion = dr["dirección"].ToString();
+            Telefono = dr["teléfono"].ToString();
+            Horario = dr["horario"].ToString();
+            SitioWeb = dr["sitioWeb"].ToString();
+            FechaRegistro = DateTime.Parse(dr["fechaRegistro"].ToString());
         }
         
     }
